@@ -53,7 +53,7 @@ completely ignored by the program (also known as a phantom type).
 
 How is this beneficial to solving our problems?
 
-1. `Tagged t a` makes it clear that the contained data is `a`, noting is hidden.
+1. `Tagged t a` makes it clear that the contained data is `a`, nothing is hidden.
 2. `Tagged t a` cannot introduce layers of indirection implicitly. Sure, you
    can have a `Tagged t (Tagged s a)`, but then it's still clear that your data
    is `a`, and it's hidden in plain sight behind two tags.
@@ -104,7 +104,7 @@ Nothing's for free
 There are downsides of this approach of course, so it's not a no-brainer
 solution.
 
-- You will have to wrap and unwrap thigns in `Tagged`, or use predefined
+- You will have to wrap and unwrap things in `Tagged`, or use predefined
   convenience functions to do it for you. Whatever the case, there will be a
   certain amount of syntactic noise.
 - `Tagged` does not share `a`'s instances. You can easily write all the
